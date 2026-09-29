@@ -8,7 +8,23 @@ namespace HW_T04_28_09_2026;
 
 internal static class ProcessHelper
 {
+    private static Logger logger = new Logger();
     private const string unknownProcessName = "Unknown process";
+
+    public static List<ProcessWraper> GetProcesses()
+    {
+        var wrapers = new List<ProcessWraper>();
+        Process[] allProcesses = Process.GetProcesses();
+
+        for (int i = 0; i < allProcesses.Length; i++)
+        {
+            wrapers.Add(new ProcessWraper(allProcesses[i]));
+        }
+
+        logger.LogData(LogLevel.Info, $"Processes count = {allProcesses.Length}");
+
+        return wrapers;
+    }
 
     public static bool Start(string nameOrPath)
     {

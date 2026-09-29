@@ -42,6 +42,7 @@
             txtProcessInfo = new TextBox();
             label3 = new Label();
             btnStartStop = new Button();
+            btnLogTest = new Button();
             SuspendLayout();
             // 
             // lstBlackList
@@ -181,11 +182,23 @@
             btnStartStop.UseVisualStyleBackColor = true;
             btnStartStop.Click += btnStartStop_Click;
             // 
+            // btnLogTest
+            // 
+            btnLogTest.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            btnLogTest.Location = new Point(648, 314);
+            btnLogTest.Name = "btnLogTest";
+            btnLogTest.Size = new Size(75, 23);
+            btnLogTest.TabIndex = 16;
+            btnLogTest.Text = "Log test";
+            btnLogTest.UseVisualStyleBackColor = true;
+            btnLogTest.Click += btnLogTest_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(735, 377);
+            Controls.Add(btnLogTest);
             Controls.Add(btnStartStop);
             Controls.Add(label3);
             Controls.Add(txtProcessInfo);
@@ -224,5 +237,6 @@
 
         private System.Windows.Forms.Button btnStartStop;
         private System.Windows.Forms.Timer timerProcessMonitor;
+        private Button btnLogTest;
     }
 }

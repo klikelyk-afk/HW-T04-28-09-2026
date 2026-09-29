@@ -7,6 +7,8 @@ namespace HW_T04_28_09_2026
 {
     public partial class Form1 : Form
     {
+        private Logger logger = new Logger();
+
         private bool isMonitoring = false;
 
         public Form1()
@@ -124,5 +126,11 @@ namespace HW_T04_28_09_2026
                 ProcessHelper.Stop(forbiddenProcess, all: true);
             }
         }
+
+        private void btnLogTest_Click(object sender, EventArgs e)
+        {
+            logger.LogData(LogLevel.Info, "Some message");
+        }
+
     }
 }
